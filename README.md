@@ -1,4 +1,4 @@
-# Project Name
+# Rock Paper Scissors Game with Python!
 
 TODO: Write a project description
 
@@ -25,7 +25,8 @@ TODO: Write history
 ## Credits
 
 TODO: Write credits
+// give accreditation to any resources / authors whose work you're using
 
 ## License
 
-TODO: Write license
+MIT
