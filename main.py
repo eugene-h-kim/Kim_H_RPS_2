@@ -7,6 +7,10 @@ player = input("Choose your weapon: rock, paper or scissors: ")
 
 computer = choices[randint(0, 2)]
 
+# these lives need to decrement when a player loses a round
+playerLives = 5
+computerLives = 5
+
 print("player chose: " + player)
 print("computer chose:" + computer)
 
@@ -17,17 +21,25 @@ if (computer == player):
 elif (player == "rock"):
   if (computer == "paper"):
     print("you lose!")
+    playerLives = playerLives - 1
   else:
     print("you win!")
+    computerLives = computerLives - 1
 
 elif (player == "paper"):
   if (computer == "scissors"):
     print("you lose!")
+    playerLives = playerLives - 1
   else:
     print("you win!")
+    computerLives = computerLives - 1
 
 elif (player == "scissors"):
   if (computer == "rock"):
     print("you lose!")
+    playerLives = playerLives - 1
   else:
     print("you win!")
+    computerLives = computerLives - 1
+print("player life count: " + str(playerLives))
+print("computer life count: " + str(computerLives))
