@@ -1,49 +1,21 @@
 from random import randint
-
-choices = ["rock", "paper", "scissors"]
-
-# player will be the weapon the player chooses via input
-
-player = False
-
-# these lives need to decrement when a player loses a round
-playerLives = 2
-computerLives = 2
-
-
-def winorlose(status):
-  print("you " + status)
-
-  choice = input("Do you want to play again? y/n: ")
-
-  global playerLives
-  global computerLives
-  global player
-
-  if choice == "n":
-    print("========== see ya! (looser) ==========")
-    exit()
-  elif choice == "y":
-    playerLives = 5
-    computerLives = 5
-    player = False
-
+from gameComponents import winLose, gameVars
 
 
 # set up our game loop so that we can keep playing and not exit
-while player is False:
-  player = input("Choose your weapon: rock, paper or scissors: ")
-  computer = choices[randint(0, 2)]
+while gameVars.player is False:
+  gameVars.player = input("Choose your weapon: rock, paper or scissors: ")
+  gameVars.computer = gameVars.choices[randint(0, 2)]
 
-  print("player chose: " + player)
-  print("computer chose:" + computer)
+  print("player chose: " + gameVars.player)
+  print("computer chose:" + gameVars.computer)
 
-  if computer == player:
+  if gameVars.computer == player:
     # tie - nothing else to compare, so it'll exit
     print("tie! try again")
 
   elif player == "rock":
-    if computer == "paper":
+    if gameVars.computer == "paper":
       print("you lose!")
       playerLives = playerLives - 1
     else:
@@ -51,7 +23,7 @@ while player is False:
       computerLives = computerLives - 1
 
   elif player == "paper":
-    if computer == "scissors":
+    if gameVars.computer == "scissors":
       print("you lose!")
       playerLives = playerLives - 1
     else:
@@ -59,7 +31,7 @@ while player is False:
       computerLives = computerLives - 1
 
   elif player == "scissors":
-    if computer == "rock":
+    if gameVars.computer == "rock":
       print("you lose!")
       playerLives = playerLives - 1
     else:
@@ -70,11 +42,9 @@ while player is False:
   print("computer life count: " + str(computerLives))
 
   if playerLives == 0:
-    winorlose("lost")
+    winLose.winorlose("lost")
     
-
   elif computerLives == 0:
-    winorlose("won")
+    winLose.winorlose("won")
     
-
   player = False
