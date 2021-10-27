@@ -10,41 +10,41 @@ while gameVars.player is False:
   print("player chose: " + gameVars.player)
   print("computer chose:" + gameVars.computer)
 
-  if gameVars.computer == player:
+  if gameVars.computer == gameVars.player:
     # tie - nothing else to compare, so it'll exit
     print("tie! try again")
 
-  elif player == "rock":
+  elif gameVars.player == "rock":
     if gameVars.computer == "paper":
       print("you lose!")
-      playerLives = playerLives - 1
+      gameVars.playerLives = gameVars.playerLives - 1
     else:
       print("you win!")
-      computerLives = computerLives - 1
+      gameVars.computerLives = gameVars.computerLives - 1
 
-  elif player == "paper":
+  elif gameVars.player == "paper":
     if gameVars.computer == "scissors":
       print("you lose!")
-      playerLives = playerLives - 1
+      gameVars.playerLives = gameVars.playerLives - 1
     else:
       print("you win!")
-      computerLives = computerLives - 1
+      gameVars.computerLives = gameVars.computerLives - 1
 
   elif player == "scissors":
     if gameVars.computer == "rock":
       print("you lose!")
-      playerLives = playerLives - 1
+      gameVars.playerLives = gameVars.playerLives - 1
     else:
       print("you win!")
-      computerLives = computerLives - 1
+      gameVars.computerLives = gameVars.computerLives - 1
 
-  print("player life count: " + str(playerLives))
-  print("computer life count: " + str(computerLives))
+  print("player life count: " + str(gameVars.playerLives))
+  print("computer life count: " + str(gameVars.computerLives))
 
-  if playerLives == 0:
+  if gameVars.playerLives == 0:
     winLose.winorlose("lost")
     
-  elif computerLives == 0:
+  elif gameVars.computerLives == 0:
     winLose.winorlose("won")
     
-  player = False
+  gameVars.player = False
