@@ -4,6 +4,7 @@ from gameComponents import winLose, gameVars
 
 # set up our game loop so that we can keep playing and not exit
 while gameVars.player is False:
+  
   gameVars.player = input("Choose your weapon: rock, paper or scissors: ")
   gameVars.computer = gameVars.choices[randint(0, 2)]
 
