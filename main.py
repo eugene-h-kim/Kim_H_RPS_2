@@ -31,7 +31,7 @@ while gameVars.player is False:
       print("you win!")
       gameVars.computerLives = gameVars.computerLives - 1
 
-  elif player == "scissors":
+  elif gameVars.player == "scissors":
     if gameVars.computer == "rock":
       print("you lose!")
       gameVars.playerLives = gameVars.playerLives - 1
