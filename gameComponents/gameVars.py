@@ -5,5 +5,5 @@ choices = ["rock", "paper", "scissors"]
 player = False
 
 # these lives need to decrement when a player loses a round
-playerLives = 2
-computerLives = 2
+playerLives = 5
+computerLives = 5
