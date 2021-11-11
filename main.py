@@ -1,45 +1,23 @@
 from random import randint
+from gameComponents import winLose, gameVars, comparePlayers
 
-choices = ["rock", "paper", "scissors"]
 
-# player will be the weapon the player chooses via input
-player = input("Choose your weapon: rock, paper or scissors: ")
+# set up our game loop so that we can keep playing and not exit
+while gameVars.player is False:
+  
+  gameVars.player = input("Choose your weapon: rock, paper or scissors: ")
+  gameVars.computer = gameVars.choices[randint(0, 2)]
+  print("============= RPS =============")
+  print("player chose: " + gameVars.player)
+  print("computer chose:" + gameVars.computer)
 
-computer = choices[randint(0, 2)]
+  print("player life count: " + str(gameVars.playerLives))
+  print("computer life count: " + str(gameVars.computerLives))
 
-# these lives need to decrement when a player loses a round
-playerLives = 5
-computerLives = 5
-
-print("player chose: " + player)
-print("computer chose:" + computer)
-
-if (computer == player):
-  # tie - nothing else to compare, so it'll exit
-  print("tie! try again")
-
-elif (player == "rock"):
-  if (computer == "paper"):
-    print("you lose!")
-    playerLives = playerLives - 1
-  else:
-    print("you win!")
-    computerLives = computerLives - 1
-
-elif (player == "paper"):
-  if (computer == "scissors"):
-    print("you lose!")
-    playerLives = playerLives - 1
-  else:
-    print("you win!")
-    computerLives = computerLives - 1
-
-elif (player == "scissors"):
-  if (computer == "rock"):
-    print("you lose!")
-    playerLives = playerLives - 1
-  else:
-    print("you win!")
-    computerLives = computerLives - 1
-print("player life count: " + str(playerLives))
-print("computer life count: " + str(computerLives))
+  if gameVars.playerLives == 0:
+    winLose.winorlose("======= lost =======")
+    
+  elif gameVars.computerLives == 0:
+    winLose.winorlose("******* won *******")
+    
+  gameVars.player = False
