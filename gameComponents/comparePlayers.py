@@ -1,6 +1,5 @@
 from gameComponents import gameVars
 
-
 def compare():
 
 # compare the player and the computer

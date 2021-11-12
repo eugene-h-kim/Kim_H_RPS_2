@@ -10,7 +10,7 @@ while gameVars.player is False:
   print("============= RPS =============")
   print("player chose: " + gameVars.player)
   print("computer chose:" + gameVars.computer)
-
+  comparePlayers.compare()
   print("player life count: " + str(gameVars.playerLives))
   print("computer life count: " + str(gameVars.computerLives))
 
